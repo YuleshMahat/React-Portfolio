@@ -45,3 +45,34 @@
     opacity: 1;
   }
 }
+
+/* Skills.module.css */
+.spinner {
+  border: 4px solid #f3f3f3; /* light grey */
+  border-top: 4px solid orange; /* spinner color */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto; /* center it */
+}
+
+.spinnerOverlay {
+  position: absolute; /* positioned relative to container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfect center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* make sure it sits above the grid */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

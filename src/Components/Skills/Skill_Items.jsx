@@ -4,7 +4,7 @@ const skill_items = ({ title, experience }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
-      <p className={styles.experience}>{experience} Years Experience</p>
+      <p className={styles.experience}>{experience}2 Years Experience</p>
     </div>
   );
 };

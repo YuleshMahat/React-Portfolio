@@ -10,32 +10,6 @@ const Intro = () => {
     info: "Based in Sydney, I'm a fullstack developer that actually solves real-life problems.",
   });
 
-  // useEffect(() => {
-  //   const fetchMainInfo = async () => {
-  //     try {
-  //       const response = await fetch("/api/mainInfo/6911ddf1d0d1a3b5625cd93f");
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch main info");
-  //       }
-  //       const data = await response.json();
-  //       // Only update state if data exists and is valid
-  //       if (data) {
-  //         setMainInfo({
-  //           title: data.title || mainInfo.title,
-  //           name: data.name || mainInfo.name,
-  //           role: data.role || mainInfo.role,
-  //           info: data.info || mainInfo.info,
-  //         });
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching main info:", error);
-  //       // Keep default state if API fails
-  //     }
-  //   };
-
-  //   fetchMainInfo();
-  // }, []); // Empty dependency array to run once on mount
-
   return (
     <div className={styles.container}>
       <img src="/Assets/images/profile.jpeg" className={styles.profileImg} />

@@ -31,6 +31,10 @@
   padding: 10px;
 }
 
+.contactButton a {
+  color: inherit;
+}
+
 .contactButton:hover {
   color: #4ee1a0;
   cursor: pointer;

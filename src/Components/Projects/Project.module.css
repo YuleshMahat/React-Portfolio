@@ -21,6 +21,10 @@
   color: #4ee1a0;
 }
 
+.contactButton a {
+  color: inherit;
+}
+
 .cardArea {
   display: grid;
   grid-template-columns: auto auto;

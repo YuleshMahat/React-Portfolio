@@ -1,9 +1,19 @@
 import React from "react";
 import styles from "./ProjectCard.module.css";
-const ProjectCard = ({ title, toolStack, imageSource }) => {
+const ProjectCard = ({
+  title,
+  toolStack,
+  imageSource,
+  githubLink,
+  liveLink,
+}) => {
   return (
     <div className={styles.container}>
-      <img src={imageSource} />
+      <img
+        src={imageSource}
+        height="281.483px"
+        style={{ objectFit: "cover" }}
+      />
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.toolStack}>
         {toolStack.map((item, index) => {
@@ -11,8 +21,15 @@ const ProjectCard = ({ title, toolStack, imageSource }) => {
         })}
       </div>
       <div className={styles.overlay}>
-        <p className={styles.button1}>VIEW PROJECT</p>
-        <p className={styles.button2}>VIEW CODE</p>
+        <a
+          href={liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "inherit" }}
+        >
+          <p>VIEW PROJECT</p>
+        </a>
+        <p>VIEW CODE</p>
       </div>
     </div>
   );

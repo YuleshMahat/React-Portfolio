@@ -5,7 +5,6 @@ export const userId = "691ee1dae300982deb56afbc";
 
 export const apiProcessor = async ({ method, url, data }) => {
   try {
-    console.log("function reaching apiprocessor", method, url);
     let response = await axios({
       method,
       url,

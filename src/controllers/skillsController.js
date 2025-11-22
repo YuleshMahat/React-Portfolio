@@ -1,14 +1,11 @@
-import { mongoConnect, getDB } from "@/lib/config/mongoConfig";
+import { mongoConnect } from "@/lib/config/mongoConfig";
 import { NextResponse } from "next/server";
-import { ObjectId } from "mongodb";
+import { findOne } from "@/models/skills/skillModel";
 
 export const getSkills = async (id) => {
   try {
     await mongoConnect();
-    const db = getDB();
-    const collection = db.collection("skills");
-
-    const data = await collection.findOne({ userId: new ObjectId(id) });
+    const data = await findOne(id);
 
     if (!data) {
       return NextResponse.json(

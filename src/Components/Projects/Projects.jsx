@@ -1,7 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./Project.module.css";
 import ProjectCard from "./ProjectCard.jsx";
+import { getProjectsAction } from "@/features/projects/projectActions";
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const getProjects = async () => {
+      const result = await getProjectsAction();
+      if (result.status === "success") setProjects(result.data);
+      console.log("projects set");
+    };
+    getProjects();
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.titleBar}>
@@ -11,36 +24,16 @@ const Projects = () => {
         </p>
       </div>
       <div className={styles.cardArea}>
-        <ProjectCard
-          imageSource="/Assets/images/thumbnail-project-1-large.webp"
-          title="DESIGN PORTFOLIO"
-          toolStack={["HTML", "CSS"]}
-        />
-        <ProjectCard
-          imageSource="/Assets/images/thumbnail-project-2-large.webp"
-          title="E-LEARNING LANDING PAGE"
-          toolStack={["HTML", "CSS"]}
-        />
-        <ProjectCard
-          imageSource="/Assets/images/thumbnail-project-3-large.webp"
-          title="TODO WEB APP"
-          toolStack={["HTML", "CSS", "JAVASCRIPT"]}
-        />
-        <ProjectCard
-          imageSource="/Assets/images/thumbnail-project-4-large.webp"
-          title="ENTERTAINMENT WEB APP"
-          toolStack={["HTML", "CSS", "JAVASCRIPT"]}
-        />
-        <ProjectCard
-          imageSource="/Assets/images/thumbnail-project-5-large.webp"
-          title="MEMORY GAME"
-          toolStack={["HTML", "CSS", "JAVASCRIPT"]}
-        />
-        <ProjectCard
-          imageSource="/Assets/images/thumbnail-project-6-large.webp"
-          title="ART GALLERY SHOWCASE"
-          toolStack={["HTML", "CSS", "JAVASCRIPT"]}
-        />
+        {projects.map((project) => (
+          <ProjectCard
+            key={project._id}
+            imageSource={project.image}
+            title={project.name}
+            toolStack={project.skills}
+            githubLink={project.github}
+            liveLink={project.live}
+          />
+        ))}
       </div>
     </div>
   );

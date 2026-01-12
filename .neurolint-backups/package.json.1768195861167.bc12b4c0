@@ -1,0 +1,7 @@
+{
+  "originalPath": "package.json",
+  "timestamp": 1768195861167,
+  "hash": "bc12b4c0",
+  "operation": "security-patch",
+  "content": "{\n  \"name\": \"portfolio-next\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\"\n  },\n  \"dependencies\": {\n    \"@netlify/plugin-nextjs\": \"^5.14.7\",\n    \"axios\": \"^1.13.2\",\n    \"body-parser\": \"^2.2.0\",\n    \"mongodb\": \"^7.0.0\",\n    \"next\": \"15.3.3\",\n    \"nodemailer\": \"^7.0.3\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@eslint/eslintrc\": \"^3\",\n    \"eslint\": \"^9\",\n    \"eslint-config-next\": \"15.3.3\"\n  }\n}\n"
+}

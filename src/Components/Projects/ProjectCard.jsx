@@ -29,7 +29,14 @@ const ProjectCard = ({
         >
           <p>VIEW PROJECT</p>
         </a>
-        <p>VIEW CODE</p>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={githubLink}
+          style={{ color: "inherit" }}
+        >
+          <p>VIEW CODE</p>
+        </a>
       </div>
     </div>
   );

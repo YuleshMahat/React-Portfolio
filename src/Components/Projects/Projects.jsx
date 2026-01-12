@@ -9,8 +9,8 @@ const Projects = () => {
   useEffect(() => {
     const getProjects = async () => {
       const result = await getProjectsAction();
+      console.log(result);
       if (result.status === "success") setProjects(result.data);
-      console.log("projects set");
     };
     getProjects();
   }, []);

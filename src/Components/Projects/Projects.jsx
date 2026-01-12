@@ -17,12 +17,7 @@ const Projects = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.titleBar}>
-        <h1 className={styles.title}>Projects</h1>
-        <p className={styles.contactButton}>
-          <a href="#contact">CONTACT ME</a>
-        </p>
-      </div>
+      <h1 className={styles.title}>Projects</h1>
       <div className={styles.cardArea}>
         {projects.map((project) => (
           <ProjectCard

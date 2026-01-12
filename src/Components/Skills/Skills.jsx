@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Skills.module.css";
 import Items from "./Skill_Items.jsx";
 import { fetchSkillsAction } from "@/features/skills/skillsActions";
+import { motion } from "framer-motion";
+import "@/index.css";
 
 function Skills() {
   const [skills, setSkills] = useState([]);
@@ -31,10 +33,26 @@ function Skills() {
           <div className={styles.spinner}></div>
         </div>
       ) : (
-        skills.map((skill, index) => <Items key={index} title={skill} />)
+        <div className={styles.tickerContainer}>
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className={styles.tickerContent}
+          >
+            {[...skills, ...skills].map((skill, i) => (
+              <Items key={i} className={styles.skillItem} title={skill} />
+            ))}
+          </motion.div>
+        </div>
       )}
+
+      <hr className={styles.line} />
+
       <img src="/Assets/images/pattern-rings.svg" alt="rings" />
-      <hr />
     </div>
   );
 }

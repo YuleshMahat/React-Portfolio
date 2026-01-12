@@ -13,7 +13,14 @@
   font-weight: bold;
   z-index: 5;
 }
-.title span {
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.textUnderline {
   text-decoration: underline;
   text-decoration-color: #4ee1a0;
   text-decoration-thickness: 4px;
@@ -70,7 +77,7 @@
 .secondContainer {
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 1.6rem;
   z-index: 200;
 }
 .container a {
@@ -148,4 +155,8 @@
   .info {
     max-width: 100%;
   }
+}
+
+.smallInformation {
+  font-size: large;
 }

@@ -13,4 +13,5 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: #151515;
 }

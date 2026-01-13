@@ -1,5 +1,6 @@
 .container {
   margin: 50px 0;
+  position: relative;
 }
 
 .container img[alt="rings"] {
@@ -36,10 +37,10 @@
 }
 
 .spinnerOverlay {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,6 +57,7 @@
   display: flex;
   gap: 3rem;
   white-space: nowrap;
+  width: max-content;
 }
 
 .skillItem {
